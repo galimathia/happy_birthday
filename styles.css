@@ -3,7 +3,7 @@ body {
   /* Убираем стандартные отступы у страницы */
   margin: 0;
   /* Делаем фон мягким и приятным */
-  background: linear-gradient(135deg, #ffb3c6, #ffd6a5);
+  background: linear-gradient(135deg, #ffed7a, #ffd8a8);
   /* Устанавливаем шрифт по умолчанию */
   font-family: Arial, sans-serif;
   /* Центрируем содержимое по вертикали и горизонтали */
@@ -20,6 +20,11 @@ body {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.container:hover {
+  transform: scale(1.05) rotate(10deg);
+  transition: transform 0.3s ease;
 }
 
 /* Карточка с поздравлением */
@@ -115,15 +120,15 @@ body {
 
 @keyframes fall {
   0% {
-    transform: translateY(-20px) scale(1) rotate(0deg);
+    transform: translateY(-20px) scale(1);
     opacity: 1;
   }
   50% {
-    transform: translateY(50vh) scale(1.1) rotate(180deg);
+    transform: translateY(50vh) scale(1.1);
     opacity: 0.9;
   }
   100% {
-    transform: translateY(110vh) scale(0.8) rotate(360deg);
+    transform: translateY(110vh) scale(0.8);
     opacity: 0;
   }
 }
