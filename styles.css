@@ -42,8 +42,11 @@ body {
   transition: transform 1s ease;
 }
 
-.card:hover {
-  transform: rotate(2deg) scale(1.03);
+
+/* Блок с фотографией */
+.photo-card {
+  /* Убраем стандартные отступы figure */
+  margin: 20px 0 0;
 }
 
 /* Фотография внутри карточки */
@@ -52,8 +55,6 @@ body {
   max-width: 100%;
   /* Скруглённые углы для фото */
   border-radius: 16px;
-  /* Отступ сверху */
-  margin-top: 20px;
   /* Сохраняем пропорции картинки */
   display: block;
 }
@@ -67,46 +68,47 @@ body {
   z-index: 0;
 }
 
-/* Отдельные падающие элементы */
-.sparkles span {
+/* Первая группа падающих элементов, сгенерированная через CSS */
+.sparkles::before {
+  content: "";
   position: absolute;
   top: -20px;
+  left: 0;
   width: 12px;
   height: 12px;
   background: gold;
   border-radius: 50%;
+  box-shadow:
+    10vw 0 0 gold,
+    30vw 0 0 gold,
+    50vw 0 0 gold,
+    70vw 0 0 gold,
+    90vw 0 0 gold;
   animation: fall 4s linear infinite;
 }
 
-/* Разные позиции и задержки для каждого элемента */
-.sparkles span:nth-child(1) {
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.sparkles span:nth-child(2) {
-  left: 30%;
-  animation-delay: 0.8s;
-}
-
-.sparkles span:nth-child(3) {
-  left: 50%;
-  animation-delay: 1.6s;
-}
-
-.sparkles span:nth-child(4) {
-  left: 70%;
-  animation-delay: 2.4s;
-}
-
-.sparkles span:nth-child(5) {
-  left: 90%;
-  animation-delay: 3.2s;
+/* Вторая группа со сдвигом по времени */
+.sparkles::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: #ff7aa2;
+  border-radius: 50%;
+  box-shadow:
+    15vw 0 0 #ff7aa2,
+    45vw 0 0 #ff7aa2,
+    65vw 0 0 #ff7aa2,
+    85vw 0 0 #ff7aa2;
+  animation: fall 5s linear infinite;
+  animation-delay: 1s;
 }
 
 @keyframes fall {
   0% {
-    transform: translateY(-20px);
+    transform: translateY(-20px) scale(1);
     opacity: 1;
   }
   100% {

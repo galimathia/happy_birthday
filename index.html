@@ -10,14 +10,7 @@
   </head>
   <body>
     <!-- Контейнер для декоративных падающих элементов -->
-    <div class="sparkles" aria-hidden="true">
-      <!-- Каждый span будет служить отдельным падающим элементом -->
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <div class="sparkles" aria-hidden="true"></div>
 
     <!-- Основной контейнер страницы -->
     <main class="container">
@@ -26,12 +19,14 @@
         <!-- Само поздравление, которое увидит пользователь при открытии страницы -->
         <h1>С днём рождения!</h1>
 
-        <!-- Фотография, которая будет отображаться на странице -->
-        <img
-          class="birthday-photo"
-          src="assets/photo_2026-07-24_17-25-29.jpg"
-          alt="Пес поздравляет вас"
-        />
+        <!-- Отдельный блок с фотографией -->
+        <figure class="photo-card">
+          <img
+            class="birthday-photo"
+            src="assets/photo_2026-07-24_17-25-29.jpg"
+            alt="Пес поздравляет вас"
+          />
+        </figure>
       </section>
     </main>
   </body>
