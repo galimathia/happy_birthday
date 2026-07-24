@@ -68,67 +68,69 @@ body {
 /* Контейнер для падающих элементов */
 .sparkles {
   position: fixed;
-  inset: 0;
+  inset: -15vh 0 0 0;
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
   z-index: 0;
 }
 
-/* Первая группа падающих элементов, сгенерированная через CSS */
+/* Первая непрерывная линия падающих кругов */
 .sparkles::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -20vh;
   left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: gold;
-  box-shadow:
-    12vw 0 0 0 #ffd166,
-    24vw 0 0 0 #ff9f1c,
-    38vw 0 0 0 #ff4d6d,
-    52vw 0 0 0 #ffd166,
-    66vw 0 0 0 #ff7aa2,
-    80vw 0 0 0 #ffd166,
-    92vw 0 0 0 #ff9f1c;
-  animation: fall 5s linear infinite;
+  width: 100%;
+  height: 150vh;
+  background:
+    radial-gradient(circle at 8% 0%, #ffd166 0 6px, transparent 7px),
+    radial-gradient(circle at 16% 0%, #ff9f1c 0 6px, transparent 7px),
+    radial-gradient(circle at 24% 0%, #ff4d6d 0 6px, transparent 7px),
+    radial-gradient(circle at 32% 0%, #ffd166 0 6px, transparent 7px),
+    radial-gradient(circle at 40% 0%, #ff7aa2 0 6px, transparent 7px),
+    radial-gradient(circle at 48% 0%, #ffd166 0 6px, transparent 7px),
+    radial-gradient(circle at 56% 0%, #ff9f1c 0 6px, transparent 7px),
+    radial-gradient(circle at 64% 0%, #ff4d6d 0 6px, transparent 7px),
+    radial-gradient(circle at 72% 0%, #ffd166 0 6px, transparent 7px),
+    radial-gradient(circle at 80% 0%, #ff7aa2 0 6px, transparent 7px),
+    radial-gradient(circle at 88% 0%, #ffd166 0 6px, transparent 7px),
+    radial-gradient(circle at 96% 0%, #ff9f1c 0 6px, transparent 7px);
+  animation: fall 8s linear infinite;
 }
 
-/* Вторая группа со сдвигом по времени */
+/* Вторая линия частиц для более ровного потока */
 .sparkles::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: -20vh;
   left: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff7aa2;
-  box-shadow:
-    8vw 0 0 0 #7bdff2,
-    18vw 0 0 0 #ff7aa2,
-    33vw 0 0 0 #ffd166,
-    47vw 0 0 0 #7bdff2,
-    61vw 0 0 0 #ff7aa2,
-    75vw 0 0 0 #ffd166,
-    88vw 0 0 0 #7bdff2;
-  animation: fall 6s linear infinite;
-  animation-delay: 1s;
+  width: 100%;
+  height: 150vh;
+  background:
+    radial-gradient(circle at 6% 0%, #7bdff2 0 5px, transparent 6px),
+    radial-gradient(circle at 14% 0%, #ff7aa2 0 5px, transparent 6px),
+    radial-gradient(circle at 22% 0%, #ffd166 0 5px, transparent 6px),
+    radial-gradient(circle at 30% 0%, #7bdff2 0 5px, transparent 6px),
+    radial-gradient(circle at 38% 0%, #ff7aa2 0 5px, transparent 6px),
+    radial-gradient(circle at 46% 0%, #ffd166 0 5px, transparent 6px),
+    radial-gradient(circle at 54% 0%, #7bdff2 0 5px, transparent 6px),
+    radial-gradient(circle at 62% 0%, #ff7aa2 0 5px, transparent 6px),
+    radial-gradient(circle at 70% 0%, #ffd166 0 5px, transparent 6px),
+    radial-gradient(circle at 78% 0%, #7bdff2 0 5px, transparent 6px),
+    radial-gradient(circle at 86% 0%, #ff7aa2 0 5px, transparent 6px),
+    radial-gradient(circle at 94% 0%, #ffd166 0 5px, transparent 6px);
+  animation: fall 10s linear infinite;
+  animation-delay: -3s;
 }
 
 @keyframes fall {
-  0% {
-    transform: translateY(-20px);
+  from {
+    transform: translateY(-110vh);
     opacity: 1;
   }
-  50% {
-    transform: translateY(50vh);
-    opacity: 0.9;
-  }
-  100% {
+  to {
     transform: translateY(110vh);
-    opacity: 0;
+    opacity: 1;
   }
 }
 
