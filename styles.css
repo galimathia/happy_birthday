@@ -78,15 +78,20 @@ body {
 .sparkles::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 10% 0%, #ffd166 0 10px, transparent 11px),
-    radial-gradient(circle at 24% 0%, #ff9f1c 0 10px, transparent 11px),
-    radial-gradient(circle at 38% 0%, #ff4d6d 0 10px, transparent 11px),
-    radial-gradient(circle at 52% 0%, #ffd166 0 10px, transparent 11px),
-    radial-gradient(circle at 66% 0%, #ff7aa2 0 10px, transparent 11px),
-    radial-gradient(circle at 80% 0%, #ffd166 0 10px, transparent 11px),
-    radial-gradient(circle at 92% 0%, #ff9f1c 0 10px, transparent 11px);
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gold;
+  box-shadow:
+    12vw 0 0 0 #ffd166,
+    24vw 0 0 0 #ff9f1c,
+    38vw 0 0 0 #ff4d6d,
+    52vw 0 0 0 #ffd166,
+    66vw 0 0 0 #ff7aa2,
+    80vw 0 0 0 #ffd166,
+    92vw 0 0 0 #ff9f1c;
   animation: fall 5s linear infinite;
 }
 
@@ -94,15 +99,20 @@ body {
 .sparkles::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 8% 0%, #7bdff2 0 8px, transparent 9px),
-    radial-gradient(circle at 18% 0%, #ff7aa2 0 8px, transparent 9px),
-    radial-gradient(circle at 33% 0%, #ffd166 0 8px, transparent 9px),
-    radial-gradient(circle at 47% 0%, #7bdff2 0 8px, transparent 9px),
-    radial-gradient(circle at 61% 0%, #ff7aa2 0 8px, transparent 9px),
-    radial-gradient(circle at 75% 0%, #ffd166 0 8px, transparent 9px),
-    radial-gradient(circle at 88% 0%, #7bdff2 0 8px, transparent 9px);
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff7aa2;
+  box-shadow:
+    8vw 0 0 0 #7bdff2,
+    18vw 0 0 0 #ff7aa2,
+    33vw 0 0 0 #ffd166,
+    47vw 0 0 0 #7bdff2,
+    61vw 0 0 0 #ff7aa2,
+    75vw 0 0 0 #ffd166,
+    88vw 0 0 0 #7bdff2;
   animation: fall 6s linear infinite;
   animation-delay: 1s;
 }
