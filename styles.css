@@ -22,10 +22,6 @@ body {
   box-sizing: border-box;
 }
 
-.container:hover {
-  transform: scale(1.05) rotate(10deg);
-  transition: transform 0.3s ease;
-}
 
 /* Карточка с поздравлением */
 .card {
@@ -46,9 +42,12 @@ body {
   position: relative;
   z-index: 1;
   /* Плавный переход для hover-эффекта */
-  transition: transform 1s ease;
+  transition: transform 0.3s ease;
 }
 
+.card:hover {
+  transform: scale(1.02);
+}
 
 /* Блок с фотографией */
 .photo-card {
@@ -79,20 +78,15 @@ body {
 .sparkles::before {
   content: "";
   position: absolute;
-  top: -20px;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: gold;
-  box-shadow:
-    12vw -10px 0 0 #ffd166,
-    24vw 0 0 0 #ff9f1c,
-    38vw -15px 0 0 #ff4d6d,
-    52vw 0 0 0 #ffd166,
-    66vw -8px 0 0 #ff7aa2,
-    80vw 0 0 0 #ffd166,
-    92vw -12px 0 0 #ff9f1c;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 0%, #ffd166 0 10px, transparent 11px),
+    radial-gradient(circle at 24% 0%, #ff9f1c 0 10px, transparent 11px),
+    radial-gradient(circle at 38% 0%, #ff4d6d 0 10px, transparent 11px),
+    radial-gradient(circle at 52% 0%, #ffd166 0 10px, transparent 11px),
+    radial-gradient(circle at 66% 0%, #ff7aa2 0 10px, transparent 11px),
+    radial-gradient(circle at 80% 0%, #ffd166 0 10px, transparent 11px),
+    radial-gradient(circle at 92% 0%, #ff9f1c 0 10px, transparent 11px);
   animation: fall 5s linear infinite;
 }
 
@@ -100,35 +94,30 @@ body {
 .sparkles::after {
   content: "";
   position: absolute;
-  top: -20px;
-  left: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff7aa2;
-  box-shadow:
-    8vw 0 0 0 #7bdff2,
-    18vw -12px 0 0 #ff7aa2,
-    33vw 0 0 0 #ffd166,
-    47vw -15px 0 0 #7bdff2,
-    61vw 0 0 0 #ff7aa2,
-    75vw -10px 0 0 #ffd166,
-    88vw 0 0 0 #7bdff2;
+  inset: 0;
+  background:
+    radial-gradient(circle at 8% 0%, #7bdff2 0 8px, transparent 9px),
+    radial-gradient(circle at 18% 0%, #ff7aa2 0 8px, transparent 9px),
+    radial-gradient(circle at 33% 0%, #ffd166 0 8px, transparent 9px),
+    radial-gradient(circle at 47% 0%, #7bdff2 0 8px, transparent 9px),
+    radial-gradient(circle at 61% 0%, #ff7aa2 0 8px, transparent 9px),
+    radial-gradient(circle at 75% 0%, #ffd166 0 8px, transparent 9px),
+    radial-gradient(circle at 88% 0%, #7bdff2 0 8px, transparent 9px);
   animation: fall 6s linear infinite;
   animation-delay: 1s;
 }
 
 @keyframes fall {
   0% {
-    transform: translateY(-20px) scale(1);
+    transform: translateY(-20px);
     opacity: 1;
   }
   50% {
-    transform: translateY(50vh) scale(1.1);
+    transform: translateY(50vh);
     opacity: 0.9;
   }
   100% {
-    transform: translateY(110vh) scale(0.8);
+    transform: translateY(110vh);
     opacity: 0;
   }
 }
