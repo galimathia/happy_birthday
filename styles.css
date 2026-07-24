@@ -11,6 +11,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease infinite;
 }
 
 /* Контейнер для центрирования карточки */
@@ -74,17 +76,19 @@ body {
   position: absolute;
   top: -20px;
   left: 0;
-  width: 12px;
-  height: 12px;
-  background: gold;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
+  background: gold;
   box-shadow:
-    10vw 0 0 gold,
-    30vw 0 0 gold,
-    50vw 0 0 gold,
-    70vw 0 0 gold,
-    90vw 0 0 gold;
-  animation: fall 4s linear infinite;
+    12vw -10px 0 0 #ffd166,
+    24vw 0 0 0 #ff9f1c,
+    38vw -15px 0 0 #ff4d6d,
+    52vw 0 0 0 #ffd166,
+    66vw -8px 0 0 #ff7aa2,
+    80vw 0 0 0 #ffd166,
+    92vw -12px 0 0 #ff9f1c;
+  animation: fall 5s linear infinite;
 }
 
 /* Вторая группа со сдвигом по времени */
@@ -93,26 +97,33 @@ body {
   position: absolute;
   top: -20px;
   left: 0;
-  width: 12px;
-  height: 12px;
-  background: #ff7aa2;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  background: #ff7aa2;
   box-shadow:
-    15vw 0 0 #ff7aa2,
-    45vw 0 0 #ff7aa2,
-    65vw 0 0 #ff7aa2,
-    85vw 0 0 #ff7aa2;
-  animation: fall 5s linear infinite;
+    8vw 0 0 0 #7bdff2,
+    18vw -12px 0 0 #ff7aa2,
+    33vw 0 0 0 #ffd166,
+    47vw -15px 0 0 #7bdff2,
+    61vw 0 0 0 #ff7aa2,
+    75vw -10px 0 0 #ffd166,
+    88vw 0 0 0 #7bdff2;
+  animation: fall 6s linear infinite;
   animation-delay: 1s;
 }
 
 @keyframes fall {
   0% {
-    transform: translateY(-20px) scale(1);
+    transform: translateY(-20px) scale(1) rotate(0deg);
     opacity: 1;
   }
+  50% {
+    transform: translateY(50vh) scale(1.1) rotate(180deg);
+    opacity: 0.9;
+  }
   100% {
-    transform: translateY(110vh) scale(0.8);
+    transform: translateY(110vh) scale(0.8) rotate(360deg);
     opacity: 0;
   }
 }
@@ -136,4 +147,10 @@ h1 {
   h1 {
     font-size: 2rem;
   }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
