@@ -16,11 +16,13 @@
     const duration = random(4, 9); // seconds
     const color = colors[Math.floor(Math.random() * colors.length)];
     const drift = Math.round(random(-80, 80));
+    const top = random(10, 15);
 
     el.style.setProperty('--size', '10px');
     el.style.setProperty('--duration', duration + 's');
     el.style.setProperty('--color', color);
     el.style.setProperty('--drift', drift + 'px');
+    el.style.setProperty('--top', top + 'vh');
 
     el.style.left = left + '%';
 
