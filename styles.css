@@ -37,6 +37,66 @@ body {
   margin: 0 auto;
 }
 
+.card:hover {
+    transform: rotateX(5deg) scale(1.1);
+    transition: 1s ease;
+}
+
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Отдельные падающие элементы */
+.sparkles span {
+  position: absolute;
+  top: -20px;
+  width: 12px;
+  height: 12px;
+  background: gold;
+  border-radius: 50%;
+  animation: fall 4s linear infinite;
+}
+
+/* Разные позиции и задержки для каждого элемента */
+.sparkles span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.sparkles span:nth-child(2) {
+  left: 30%;
+  animation-delay: 0.8s;
+}
+
+.sparkles span:nth-child(3) {
+  left: 50%;
+  animation-delay: 1.6s;
+}
+
+.sparkles span:nth-child(4) {
+  left: 70%;
+  animation-delay: 2.4s;
+}
+
+.sparkles span:nth-child(5) {
+  left: 90%;
+  animation-delay: 3.2s;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) scale(0.8);
+    opacity: 0;
+  }
+}
+
 /* Стили для заголовка */
 h1 {
   /* Размер текста */
