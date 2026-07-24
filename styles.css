@@ -35,18 +35,36 @@ body {
   /* Ограничиваем ширину карточки */
   max-width: 600px;
   margin: 0 auto;
+  /* Чтобы карточка находилась поверх падающих элементов */
+  position: relative;
+  z-index: 1;
+  /* Плавный переход для hover-эффекта */
+  transition: transform 1s ease;
 }
 
 .card:hover {
-    transform: rotateX(5deg) scale(1.1);
-    transition: 1s ease;
+  transform: rotate(2deg) scale(1.03);
 }
 
+/* Фотография внутри карточки */
+.birthday-photo {
+  /* Фотография не выходит за пределы карточки */
+  max-width: 100%;
+  /* Скруглённые углы для фото */
+  border-radius: 16px;
+  /* Отступ сверху */
+  margin-top: 20px;
+  /* Сохраняем пропорции картинки */
+  display: block;
+}
+
+/* Контейнер для падающих элементов */
 .sparkles {
   position: fixed;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+  z-index: 0;
 }
 
 /* Отдельные падающие элементы */
