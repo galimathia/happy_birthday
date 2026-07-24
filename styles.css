@@ -1,0 +1,59 @@
+/* Общие стили страницы */
+body {
+  /* Убираем стандартные отступы у страницы */
+  margin: 0;
+  /* Делаем фон мягким и приятным */
+  background: linear-gradient(135deg, #ffb3c6, #ffd6a5);
+  /* Устанавливаем шрифт по умолчанию */
+  font-family: Arial, sans-serif;
+  /* Центрируем содержимое по вертикали и горизонтали */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Контейнер для центрирования карточки */
+.container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Карточка с поздравлением */
+.card {
+  /* Белый фон карточки */
+  background: rgba(255, 255, 255, 0.9);
+  /* Скруглённые углы */
+  border-radius: 20px;
+  /* Тень для объёмности */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* Внутренние отступы */
+  padding: 40px 60px;
+  /* Центрируем текст */
+  text-align: center;
+  /* Ограничиваем ширину карточки */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Стили для заголовка */
+h1 {
+  /* Размер текста */
+  font-size: 3rem;
+  /* Цвет текста */
+  color: #b0004a;
+  /* Убираем стандартные отступы */
+  margin: 0;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
