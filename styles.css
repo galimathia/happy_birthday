@@ -94,11 +94,11 @@ body {
     opacity: 1;
   }
   25% {
-    transform: translateY(var(--top, 10vh)) translateX(0);
+    transform: translateY(var(--top, 10vh)) translateX(var(--driftbefore, 20px));
     opacity: 0.8;
   }
   100% {
-    transform: translateY(110vh) translateX(var(--drift, 20px));
+    transform: translateY(110vh) translateX(var(--driftafter, 20px));
     opacity: 0;
   }
 }
